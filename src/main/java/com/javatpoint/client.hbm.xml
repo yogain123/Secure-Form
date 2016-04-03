@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+<hibernate-mapping>  
+<class name="com.javatpoint.Client" table="client">  
+          <id name="id" column="id">  
+          <generator class="increment"></generator>  
+          </id>  
+            
+          <property name="fname" column="FirstName"></property>
+          <property name="lname" column="LastName"></property>
+          <property name="date" column="Date"></property>
+          <property name="addressline1" column="AddressLine1"></property>
+          <property name="city" column="City"></property>
+          <property name="selectedCountry" column="Country"></property>
+          <property name="appdate" column="AppointmentDate"></property>
+          <property name="selectedGender" column="Gender"></property>
+          <property name="selectedLocation" column="Location"></property>
+          <property name="selectedState" column="State"></property>
+          <property name="phone" column="Phone"></property>
+          <property name="mname" column="MiddleName"></property>
+          <property name="addressline2" column="AddressLine2"></property>
+          <property name="zipcode1" column="Zipcode1"></property>
+          <property name="zipcode2" column="Zipcode2"></property>
+          <property name="email" column="Email"></property>
+    
+  <!--     <property name="DateOfBirth" column="DateOfBirth"></property>  
+    
+         
+    
+          <property name="Address" column="Address"></property>  
+    
+    
+          <property name="City" column="City"></property>  
+    
+          <property name="Country" column="Country"></property>  
+    		
+    
+         <property name="Phone" column="Phone"></property>
+    
+          <property name="AppointmentDate" column="AppointmentDate"></property>  
+    
+    
+          <property name="Gender" column="Gender"></property>  
+    
+          <property name="Location" column="Location"></property>
+    
+           
+    
+          <property name="State" column="State"></property>  
+    		
+         <property name="ZipCode" column="ZipCode"></property>
+         <property name="Email" column="Email"></property>
+        -->
+
+</class>  
+            
+</hibernate-mapping>

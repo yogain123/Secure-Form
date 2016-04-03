@@ -1,0 +1,149 @@
+<!--<div class="container-fluid">-->
+    <div class="row">
+        <form role="form" data-ng-controller="homeCtrl" name="MyForm" data-ng-submit="submittedForm()" novalidate>
+          <div>
+            <div class="col-md-6" style="background-color:#FFFFFF;">
+                  <div class="form-group">
+                    <label for="FirstName"><font color="#000000">FirstName</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <input type="text" data-ng-model="list.fname" style="border:2px solid #2B2B2B;border-radius:5px" id="fname" placeholder="Enter your first name" name="fname" data-ng-required="true">
+                    <span class="help-block" data-ng-show="(submitted || MyForm.fname.$touched)&&MyForm.fname.$error.required && MyForm.fname.$invalid"><font color="#FF5B37"><strong>
+                      Your first name is required.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="LastName"><font color="#000000">LastName</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <input type="text" data-ng-model="list.lname" style="border:2px solid #2B2B2B;border-radius:5px" id="lname" placeholder="Enter your last name" name="lname" data-ng-required="true">
+                    <span class="help-block" data-ng-show="(submitted || MyForm.lname.$touched)&&MyForm.lname.$error.required && MyForm.lname.$invalid"><font color="#FF5B37"><strong>Your last name is required.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="DOB"><font color="#000000">Date of Birth</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <input type="text" data-ng-model="list.date" style="border:2px solid #2B2B2B;border-radius:5px" id="date" placeholder="MM/DD/YYYY"
+                    name="dob" data-ng-pattern="/^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/((19\d{2})|([2-9]\d{3}))$/" data-ng-required="true">
+                    <span class="help-block" data-ng-show="(submitted || MyForm.dob.$touched) && MyForm.dob.$error.required"> <font color="#FF5B37"><strong>Please enter your date of birth.</strong></font></span>
+                    <span class="help-block" data-ng-show="MyForm.dob.$error.pattern"><font color="#FF5B37"><strong>Incorrect Format.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Address1"><font color="#000000">AddressLine1</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <input type="text" data-ng-model="list.addressline1" style="border:2px solid #2B2B2B;border-radius:5px" id="address1" style="height: 100px"
+                    name="address1" data-ng-required="true">
+                    <span class="help-block" data-ng-show="(submitted || MyForm.address1.$touched) && MyForm.address1.$error.required && MyForm.address1.$invalid"><font color="#FF5B37"><strong>Please enter your address.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="City"><font color="#000000">City</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <input type="text" data-ng-model="list.city" style="border:2px solid #2B2B2B;border-radius:5px" id="city" placeholder="Enter your city"
+                    name="city" data-ng-required="true">
+                    <span class="help-block" data-ng-show="(submitted ||MyForm.city.$touched)&& MyForm.city.$invalid && MyForm.city.$error.required"><font color="#FF5B37"><strong>Please enter your city.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="country"><font color="#000000">Country</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <select data-ng-model="list.selectedCountry" name="country" data-ng-options="x for x in countries" style="border:2px solid #2B2B2B;border-radius:5px" data-ng-required="true">
+                      <option value="">Select a country</option>
+                    </select>
+                    <span class="help-block" data-ng-show="(submitted || MyForm.country.$touched) && MyForm.country.$error.required && MyForm.country.$invalid"><font color="#FF5B37"><strong>Please enter your country.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Phone"><font color="#000000">Phone:</font>
+                    </label>
+                    <br>
+                    <input type="text" data-ng-model="list.phone" style="border:2px solid #2B2B2B;border-radius:5px" id="phone" name="phone" placeholder="Enter your phone number" data-ng-pattern="/^[789]\d{9}$/" maxlength="10">
+                    <span class="help-block" data-ng-show="MyForm.phone.$dirty && MyForm.phone.$error.pattern"><font color="#FF5B37"><strong>Please enter a valid phone number.</strong></font></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="AD"><font color="#000000">Appointment Date</font><font color="red">*</font>:
+                    </label>
+                    <br>
+                    <input type="text"  data-ng-model="list.appdate" style="border:2px solid #2B2B2B;border-radius:5px" name="appdate" id="Adate" data-ng-required="true" data-ng-pattern="/^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/((19\d{2})|([2-9]\d{3}))$/" placeholder="MM/DD/YYYY">
+                    <span class="help-block" data-ng-show="(submitted || MyForm.appdate.$touched) && MyForm.appdate.$error.required"> <font color="#FF5B37"><strong>Please enter your appointment date.</strong></font></span>
+                    <span class="help-block" data-ng-show="MyForm.appdate.$error.pattern"><font color="#FF5B37"><strong>Incorrect Format.</strong></font></span>
+                  </div>
+            </div>
+          </div>
+          <div>
+            <div class="col-md-6" style="background-color:#FFFFFF ;">
+                <div class="form-group">
+                  <label for="MiddleName"><font color="#000000">MiddleName:</font>
+                  </label>
+                  <br>
+                  <input type="text" data-ng-model="list.mname" name="mname" style="border:2px solid #2B2B2B;border-radius:5px" id="MiddleName" placeholder="Enter your middle name" >
+                </div>
+
+                <div class="form-group">
+                  <label for="gender"><font color="#000000">Gender</font><font color="red">*</font>:
+                  </label>
+                  <br>
+                  <select name="gender" data-ng-model="list.selectedGender" data-ng-options="x for x in gender" style="border:2px solid #2B2B2B;border-radius:5px" required>
+                    <option value="">Select your gender.</option>
+                  </select>
+                  <span class="help-block" data-ng-show="(submitted || MyForm.gender.$touched) && MyForm.gender.$error.required && MyForm.gender.$invalid"><font color="#FF5B37"><strong>Please enter your gender.</strong></font>
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="Location"><font color="#000000">Location</font><font color="red">*</font>:
+                  </label>
+                  <br>
+                  <select  id="Location" name="location" data-ng-model="list.selectedLocation" data-ng-options="x for x in locations" style="border:2px solid #2B2B2B;border-radius:5px" required>
+                  <option value="">Select your location.</option>
+                  </select>
+                  <span class="help-block" data-ng-show="(submitted || MyForm.location.$touched) && MyForm.location.$error.required && MyForm.location.$invalid"><font color="#FF5B37"><strong>Please provide your location.</strong></font>
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="Address2"><font color="#000000">AddressLine2:</font>
+                  </label>
+                  <br>
+                  <input type="text" data-ng-model="list.addressline2" style="border:2px solid #2B2B2B;border-radius:5px" id="address2">
+                </div>
+
+                <div class="form-group">
+                  <label for="State"><font color="#000000">State</font><font color="red">*</font>:
+                  </label>
+                  <br>
+                  <select  id="State"  data-ng-model="list.selectedState" name="state" data-ng-options="x for x in states" style="border:2px solid #2B2B2B;border-radius:5px" required>
+                  <option value="">Select your state.</option>
+                  </select>
+                  <span class="help-block" data-ng-show="(submitted || MyForm.state.$touched) && MyForm.state.$error.required && MyForm.state.$invalid"><font color="#FF5B37"><strong>Please enter your state.</strong></font>
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="zip"><font color="#000000">Zip Code:</font>
+                  </label>
+                  <br>
+                  <input type="text" data-ng-model="list.zipcode1" style="border:2px solid #2B2B2B;border-radius:5px" id="zcode" size="2">-<input type="text" data-ng-model="list.zipcode2" style="border:2px solid #2B2B2B;border-radius:5px" id="zcode" size="8">
+                </div>
+
+                <div class="form-group">
+                  <label for="email"><font color="#000000">Email:</font>
+                  </label>
+                  <br>
+                  <input type="email" data-ng-model="list.email" style="border:2px solid #2B2B2B;border-radius:5px" id="email" name="email" placeholder="Enter email">
+                  <span data-ng-class="help-block" data-ng-show="MyForm.email.$dirty && MyForm.email.$error.email"><font color="#FF5B37"><strong>Please enter a valid email.</strong></font></span>
+                </div>
+                <!--<a id="button1" ui-sref=".display">Submit</a>-->
+                <input id="button1" type="submit" name="submit" value="Submit"/>
+                <input id="button1" type="button" name="reset" value="Reset" data-ng-click="reset()"/>
+            </div>
+          </div>
+          </form>
+        </div>
+     <!-- </div>-->
